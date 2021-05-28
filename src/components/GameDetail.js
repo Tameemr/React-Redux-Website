@@ -4,8 +4,12 @@ import styled from "styled-components";
 import { motion } from "framer-motion";
 //Redux
 import { useSelector } from "react-redux";
+import { useLocation } from "react-router-dom";
 
 const GameDetail = () => {
+  const location = useLocation();
+  const pathnameId = location.pathname.split("/")[2];
+  console.log(pathnameId);
   //Data
   const { screen, game } = useSelector((state) => state.detail);
   return (
